@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="이전 대화를 기억하며 함께 생각하는 AI 챗봇">
+  <title>찌에게 뭐든지 물어봐요!</title>
+  <link rel="stylesheet" href="/style.css">
+  <script src="/app.js" defer></script>
+</head>
+<body>
+  <aside class="sidebar">
+    <a class="brand" href="/" aria-label="찌에게 뭐든지 물어봐요! 홈"><span class="logo">✳</span><span class="brand-name">찌에게 뭐든지<br>물어봐요!</span></a>
+    <button id="new-chat" class="new-chat" type="button"><span>＋</span> 새 대화 시작</button>
+    <div class="sidebar-note"><span class="small-label">YOUR THINKING PARTNER</span><p>작은 궁금증부터<br>새로운 아이디어까지.</p></div>
+    <div class="sidebar-bottom"><span class="dot"></span> GPT-4o mini <span class="badge">AI</span><p>대화는 현재 탭에서만 유지됩니다.</p></div>
+  </aside>
+  <main>
+    <header><span>나만의 AI 도우미</span><span class="header-note">함께 생각하는 공간</span></header>
+    <section id="conversation" aria-label="대화 내용">
+      <div id="welcome" class="welcome">
+        <div class="welcome-icon">✳</div><span class="eyebrow">A LITTLE CHAT, A NEW PERSPECTIVE</span>
+        <h1>찌에게 뭐든지 물어봐요!</h1><p>생각을 정리하고, 아이디어를 발견하고, 궁금한 것을 알아보세요.<br>이야기의 흐름을 기억하며 함께할게요.</p>
+        <div class="suggestions">
+          <button type="button" data-prompt="복잡한 생각을 정리하고 싶어. 어디서부터 시작하면 좋을까?"><span>↗</span><strong>생각 정리하기</strong><small>막막한 생각에 실마리를 찾아요</small></button>
+          <button type="button" data-prompt="주말에 집에서 할 수 있는 창의적인 취미 5가지를 추천해 줘."><span>✧</span><strong>아이디어 발견하기</strong><small>익숙한 일상에 새로운 시각을 더해요</small></button>
+          <button type="button" data-prompt="인공지능이 어떻게 학습하는지 쉬운 비유로 설명해 줘."><span>⌘</span><strong>쉽게 알아보기</strong><small>어려운 개념도 차근차근 이해해요</small></button>
+        </div>
+      </div>
+      <div id="messages" role="log" aria-live="polite" aria-relevant="additions"></div>
+    </section>
+    <div class="composer-area">
+      <p id="error" role="alert" hidden></p>
+      <form id="chat-form">
+        <label class="sr-only" for="message">메시지</label>
+        <textarea id="message" rows="1" maxlength="12000" placeholder="어떤 이야기를 나눠볼까요?" required></textarea>
+        <div class="composer-bottom"><span>Enter로 전송 · Shift + Enter로 줄바꿈</span><button id="send" type="submit" aria-label="메시지 보내기">↑</button></div>
+      </form>
+      <p class="footnote">AI 답변은 정확하지 않을 수 있습니다. 중요한 정보는 한 번 더 확인해 주세요.</p>
+    </div>
+  </main>
+</body>
+</html>
